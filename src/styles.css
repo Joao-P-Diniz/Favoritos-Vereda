@@ -49,10 +49,11 @@ h1 {
   justify-content: center;
 }
 
-/* Estilo do card de produto */
+/* Estilo básico do card de produto */
 .product-card {
-  width: 300px;
-  height: 400px;
+  position: relative;
+  width: 290px;
+  height: 300px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
@@ -70,7 +71,7 @@ h1 {
 .product-card img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   border-radius: 10px;
 }
 
@@ -78,34 +79,33 @@ h1 {
 .product-card h3 {
   font-size: 18px;
   color: #333;
-  margin-top: 20px;
+  margin-bottom: 10px;
   text-align: justify;
 }
-
 /* Preço do produto */
 .product-card p {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  color: #787978;
-  margin-top: 30px;
+  color: #000000;
+  margin-bottom: 15px;
+  text-align: left;
 }
-
-/* Botão de adicionar aos favoritos */
-.product-card button {
-  background-color: #1563f3;
-  color: #ffffff;
-  font-weight: bold;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+/* Ícone de favoritar/favorito no topo */
+.favorite-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 20px; /* Ajuste o tamanho conforme necessário */
+  height: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  position: relative;
-  top: 60px;
+  transition: transform 0.3s ease;
+  
 }
 
-.product-card button:hover {
-  background-color: #1049b4;
+.favorite-icon:hover {
+  transform: scale(1.3);  
 }
+
+
 
 
