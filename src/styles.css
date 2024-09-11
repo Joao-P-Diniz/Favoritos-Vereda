@@ -1,160 +1,111 @@
-* {
-  margin: 0;
+/* Container da aplicação */
+*{
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
-
-body {
-  background-color: #f5f5f5;
+.app-container {
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
   color: #333;
 }
 
-header {
-  background-color: #e68d07;
-  padding: 50px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.header-container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* Navegação */
+nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-
-h1 {
-  color: #333;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-}
-
-.search-bar input {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  width: 300px;
-}
-
-main {
-  max-width: 1000px;
-  margin: 50px auto;
+  background-color: #ee7008;
   padding: 20px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
-.favorites-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 15px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  color: #f0f0f0;
+}
+
+/* Título da página */
+h1 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Galeria de produtos */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
   justify-content: center;
-  padding: 0 100px;
 }
 
-/* Estilo normal do quadro do produto */
-.favorite-item {
-  position: relative;
+/* Estilo do card de produto */
+.product-card {
+  width: 300px;
+  height: 400px;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 200px;
-  height: 500px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 15px;
   text-align: center;
-  overflow: hidden;
-  margin: 0 auto;
-  transition: height 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
-/* Estilo para aumentar o quadro do produto */
-.favorite-item.expanded {
-  height: 600px; /* Aumenta o tamanho quando expandido */
+.product-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Outros estilos */
-.favorite-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px 8px 0 0;
+/* Imagem do produto */
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 14px;
+  border-radius: 10px;
 }
 
-.favorite-item h3 {
-  font-size: 20px; 
-  margin: 10px;
-  padding: 0; 
-  white-space: wrap;  
-  overflow: hidden; 
+/* Título do produto */
+.product-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+  text-align: justify;
 }
 
-.favorite-item p {
-  color: #666;
-  font-size: 16px;
-  margin-top: 50px;
-}
-
-.price {
+/* Preço do produto */
+.product-card p {
   font-size: 18px;
   font-weight: bold;
-  color: #000;
+  color: #787978;
+  margin-top: 30px;
 }
 
-.view-btn {
-  position: absolute; /* Permite posicionar o botão de forma absoluta dentro do contêiner pai */
-  bottom: 10px; /* Ajusta a distância do botão em relação ao fundo do contêiner */
-  left: 50%; /* Centraliza horizontalmente dentro do contêiner */
-  transform: translateX(-50%); /* Ajusta o alinhamento do botão centralizado */
-  padding: 8px 16px; /* Adiciona um pouco de preenchimento para o botão */
-  background-color: #007bff; /* Cor de fundo do botão */
-  color: white; /* Cor do texto */
-  border: none; /* Remove bordas */
-  border-radius: 4px; /* Arredonda os cantos do botão */
-  cursor: pointer; /* Muda o cursor para indicar um elemento clicável */
-  font-size: 14px; /* Ajusta o tamanho da fonte do botão */
-}
-.description {
-  margin: 10px;
-  color: #666;
-  display: block;
-}
-.view-btn:hover {
-  background-color: #0077cc;
-}
-
-.favorite-item .description {
-  display: none; /* Oculta a descrição por padrão */
-}
-
-.favorite-item.expanded .description {
-  display: block; /* Exibe a descrição quando o item está expandido */
-}
-
-.favorite-icon {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  padding: 5px;
-  color: #0a0a0a44; /* Cor padrão do ícone */
-  font-size: 25px;
+/* Botão de adicionar aos favoritos */
+.product-card button {
+  background-color: #1563f3;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  top: 60px;
 }
 
-.favorite-icon.favorited {
-  color: red; /* Cor do ícone ao estar favoritado */
+.product-card button:hover {
+  background-color: #1049b4;
 }
-
-.favorite-icon:hover {
-  color: darkred;
-}
-
 
 
