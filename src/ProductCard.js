@@ -20,8 +20,8 @@ const ProductCard = ({ product }) => {
         onClick={() => toggleFavorite(product)}
       />
       <img src={product.thumbnail} alt={product.title} />
-      <p>R$ {product.price}</p>
       <h3>{product.title}</h3>
+      <p>R$ {product.price}</p>
     </div>
    
   );

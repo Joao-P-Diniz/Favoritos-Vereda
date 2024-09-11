@@ -1,8 +1,9 @@
-/* Container da aplicação */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-weight: "Roboto",sans-serif;
 }
 .app-container {
   width: 100%;
@@ -23,8 +24,7 @@ nav {
 nav a {
   text-decoration: none;
   color: #333;
-  font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   padding: 8px 15px;
   transition: background-color 0.3s ease;
 }
@@ -40,7 +40,9 @@ h1 {
   color: #333;
   margin-bottom: 30px;
 }
-
+p{
+  margin-left: 10px;
+}
 /* Galeria de produtos */
 .gallery {
   display: flex;
@@ -53,7 +55,7 @@ h1 {
 .product-card {
   position: relative;
   width: 290px;
-  height: 300px;
+  height: 320px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
@@ -69,7 +71,7 @@ h1 {
 
 /* Imagem do produto */
 .product-card img {
-  max-width: 100%;
+  max-width: 200%;
   height: auto;
   margin-bottom: 10px;
   border-radius: 10px;
@@ -87,7 +89,7 @@ h1 {
   font-size: 16px;
   font-weight: bold;
   color: #000000;
-  margin-bottom: 15px;
+  margin: 30px 0 20px 0;
   text-align: left;
 }
 /* Ícone de favoritar/favorito no topo */
